@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.5.001">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.5.001" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="read_excel" compatibility="9.5.001" expanded="true" height="68" name="Read Excel DNAData q4" width="90" x="45" y="34">
+        <parameter key="excel_file" value="/Users/janithachathuranga/Desktop/DM 2020 Tahar/Lectures/DM-Data-Practical-1-16/DNAData_question4.xls"/>
+        <parameter key="sheet_selection" value="sheet number"/>
+        <parameter key="sheet_number" value="1"/>
+        <parameter key="imported_cell_range" value="A1"/>
+        <parameter key="encoding" value="SYSTEM"/>
+        <parameter key="first_row_as_names" value="true"/>
+        <list key="annotations"/>
+        <parameter key="date_format" value=""/>
+        <parameter key="time_zone" value="SYSTEM"/>
+        <parameter key="locale" value="English (United States)"/>
+        <parameter key="read_all_values_as_polynominal" value="false"/>
+        <list key="data_set_meta_data_information">
+          <parameter key="0" value="193913\.0.true.real.attribute"/>
+          <parameter key="1" value="297392\.0.true.real.attribute"/>
+          <parameter key="2" value="298062\.0.true.real.attribute"/>
+          <parameter key="3" value="383188\.0.true.real.attribute"/>
+          <parameter key="4" value="283315\.0.true.real.attribute"/>
+          <parameter key="5" value="296448\.0.true.real.attribute"/>
+          <parameter key="6" value="878280\.0.true.real.attribute"/>
+          <parameter key="7" value="377461\.0.true.real.attribute"/>
+          <parameter key="8" value="325182\.0.true.real.attribute"/>
+          <parameter key="9" value="868304\.0.true.real.attribute"/>
+          <parameter key="10" value="1469292\.0.true.real.attribute"/>
+          <parameter key="11" value="1470048\.0.true.real.attribute"/>
+          <parameter key="12" value="756401\.0.true.real.attribute"/>
+          <parameter key="13" value="379708\.0.true.real.attribute"/>
+          <parameter key="14" value="207274\.0.true.real.attribute"/>
+          <parameter key="15" value="1435862\.0.true.real.attribute"/>
+          <parameter key="16" value="461425\.0.true.real.attribute"/>
+          <parameter key="17" value="357031\.0.true.real.attribute"/>
+          <parameter key="18" value="769657\.0.true.real.attribute"/>
+          <parameter key="19" value="812105\.0.true.real.attribute"/>
+          <parameter key="20" value="47475\.0.true.real.attribute"/>
+          <parameter key="21" value="767183\.0.true.real.attribute"/>
+          <parameter key="22" value="241412\.0.true.real.attribute"/>
+          <parameter key="23" value="810057\.0.true.real.attribute"/>
+          <parameter key="24" value="183337\.0.true.real.attribute"/>
+          <parameter key="25" value="839552\.0.true.real.attribute"/>
+          <parameter key="26" value="786084\.0.true.real.attribute"/>
+          <parameter key="27" value="785793\.0.true.real.attribute"/>
+          <parameter key="28" value="796258\.0.true.real.attribute"/>
+          <parameter key="29" value="486110\.0.true.real.attribute"/>
+          <parameter key="30" value="489489\.0.true.real.attribute"/>
+          <parameter key="31" value="1471841\.0.true.real.attribute"/>
+          <parameter key="32" value="878652\.0.true.real.attribute"/>
+          <parameter key="33" value="755145\.0.true.real.attribute"/>
+          <parameter key="34" value="626502\.0.true.real.attribute"/>
+          <parameter key="35" value="814526\.0.true.real.attribute"/>
+          <parameter key="36" value="143306\.0.true.real.attribute"/>
+          <parameter key="37" value="344134\.0.true.real.attribute"/>
+          <parameter key="38" value="866702\.0.true.real.attribute"/>
+          <parameter key="39" value="491565\.0.true.real.attribute"/>
+          <parameter key="40" value="770059\.0.true.real.attribute"/>
+          <parameter key="41" value="770394\.0.true.real.attribute"/>
+          <parameter key="42" value="629896\.0.true.real.attribute"/>
+          <parameter key="43" value="624360\.0.true.real.attribute"/>
+          <parameter key="44" value="52076\.0.true.real.attribute"/>
+          <parameter key="45" value="43733\.0.true.real.attribute"/>
+          <parameter key="46" value="44563\.0.true.real.attribute"/>
+          <parameter key="47" value="713922\.0.true.real.attribute"/>
+          <parameter key="48" value="609663\.0.true.real.attribute"/>
+          <parameter key="49" value="840942\.0.true.real.attribute"/>
+          <parameter key="50" value="80109\.0.true.real.attribute"/>
+          <parameter key="51" value="782811\.0.true.real.attribute"/>
+          <parameter key="52" value="814260\.0.true.real.attribute"/>
+          <parameter key="53" value="784224\.0.true.real.attribute"/>
+          <parameter key="54" value="841641\.0.true.real.attribute"/>
+          <parameter key="55" value="244618\.0.true.real.attribute"/>
+          <parameter key="56" value="295985\.0.true.real.attribute"/>
+          <parameter key="57" value="244637\.0.true.real.attribute"/>
+          <parameter key="58" value="417226\.0.true.real.attribute"/>
+        </list>
+        <parameter key="read_not_matching_values_as_missings" value="false"/>
+        <parameter key="datamanagement" value="double_array"/>
+        <parameter key="data_management" value="auto"/>
+      </operator>
+      <operator activated="true" class="principal_component_analysis" compatibility="9.5.001" expanded="true" height="103" name="PCA" width="90" x="179" y="34">
+        <parameter key="dimensionality_reduction" value="keep variance"/>
+        <parameter key="variance_threshold" value="0.95"/>
+        <parameter key="number_of_components" value="1"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="9.5.001" expanded="true" height="103" name="Multiply" width="90" x="313" y="34"/>
+      <operator activated="true" class="discretize_by_frequency" compatibility="9.5.001" expanded="true" height="103" name="Discretize frequency" width="90" x="447" y="187">
+        <parameter key="return_preprocessing_model" value="false"/>
+        <parameter key="create_view" value="true"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="numeric"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="real"/>
+        <parameter key="block_type" value="value_series"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_series_end"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="use_sqrt_of_examples" value="false"/>
+        <parameter key="number_of_bins" value="10"/>
+        <parameter key="range_name_type" value="long"/>
+        <parameter key="automatic_number_of_digits" value="true"/>
+        <parameter key="number_of_digits" value="-1"/>
+      </operator>
+      <operator activated="true" class="write_excel" compatibility="9.5.001" expanded="true" height="103" name="Write Excel equalfrequency" width="90" x="581" y="187">
+        <parameter key="excel_file" value="/Users/janithachathuranga/Desktop/RMJC_MADAWALA_17209393_COMP3001L_practical1/DNAData_question4_equalfrequency.xls"/>
+        <parameter key="file_format" value="xls"/>
+        <enumeration key="sheet_names"/>
+        <parameter key="sheet_name" value="RapidMiner Data"/>
+        <parameter key="date_format" value="yyyy-MM-dd HH:mm:ss"/>
+        <parameter key="number_format" value="#.0"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="discretize_by_bins" compatibility="9.5.001" expanded="true" height="103" name="Discretize_binning_simple" width="90" x="447" y="34">
+        <parameter key="return_preprocessing_model" value="false"/>
+        <parameter key="create_view" value="true"/>
+        <parameter key="attribute_filter_type" value="all"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="numeric"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="real"/>
+        <parameter key="block_type" value="value_series"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_series_end"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="number_of_bins" value="10"/>
+        <parameter key="define_boundaries" value="false"/>
+        <parameter key="range_name_type" value="long"/>
+        <parameter key="automatic_number_of_digits" value="true"/>
+        <parameter key="number_of_digits" value="3"/>
+      </operator>
+      <operator activated="true" class="write_excel" compatibility="9.5.001" expanded="true" height="103" name="Write Excel simplebins" width="90" x="581" y="34">
+        <parameter key="excel_file" value="/Users/janithachathuranga/Desktop/RMJC_MADAWALA_17209393_COMP3001L_practical1/DNAData_question4_simplebins.xls"/>
+        <parameter key="file_format" value="xls"/>
+        <enumeration key="sheet_names"/>
+        <parameter key="sheet_name" value="RapidMiner Data"/>
+        <parameter key="date_format" value="yyyy-MM-dd HH:mm:ss"/>
+        <parameter key="number_format" value="#.0"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <connect from_op="Read Excel DNAData q4" from_port="output" to_op="PCA" to_port="example set input"/>
+      <connect from_op="PCA" from_port="example set output" to_op="Multiply" to_port="input"/>
+      <connect from_op="Multiply" from_port="output 1" to_op="Discretize_binning_simple" to_port="example set input"/>
+      <connect from_op="Multiply" from_port="output 2" to_op="Discretize frequency" to_port="example set input"/>
+      <connect from_op="Discretize frequency" from_port="example set output" to_op="Write Excel equalfrequency" to_port="input"/>
+      <connect from_op="Discretize_binning_simple" from_port="example set output" to_op="Write Excel simplebins" to_port="input"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+    </process>
+  </operator>
+</process>
